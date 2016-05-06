@@ -8,9 +8,11 @@ yum install -y -q gcc gcc-c++ make \
    libffi libffi-devel \
    libyaml libyaml-devel
 echo 'Installing python-*client... (it takes some time)'
+pip install 'requests[security]'
 pip install -q -r requirements.txt
 
 yum install -y bash-completion
-for service in nova neutron cinder keystone glance; do
+for service in nova neutron cinder keystone glance heat; do
     wget -q -O /etc/bash_completion.d/${service} http://git.openstack.org/cgit/openstack/python-${service}client/plain/tools/${service}.bash_completion
+    #wget -q -O /etc/bash_completion.d/heat http://git.openstack.org/cgit/openstack/python-heatclient/plain/tools/heat.bash_completion
 done
