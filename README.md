@@ -1,3 +1,5 @@
 # install_cli
-テスト環境にて動いたものをpip freezeでバージョン確認し追記
+テスト環境にて動いたものをpip freezeでバージョン確認し追記していく
+centos6に入っているPythonは古いためopenstackCliが利用できない。
+virtualenvを使いシステムローカルにPython2.7をインストールしその環境にCliを入れていく
 
