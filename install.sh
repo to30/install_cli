@@ -12,7 +12,6 @@ pip install 'requests[security]'
 pip install -q -r requirements.txt
 
 yum install -y bash-completion
-for service in nova neutron cinder keystone glance heat; do
+for service in nova neutron cinder keystone glance heat ceilometer; do
     wget -q -O /etc/bash_completion.d/${service} http://git.openstack.org/cgit/openstack/python-${service}client/plain/tools/${service}.bash_completion
-    #wget -q -O /etc/bash_completion.d/heat http://git.openstack.org/cgit/openstack/python-heatclient/plain/tools/heat.bash_completion
 done
